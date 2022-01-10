@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import DailyDictionary
 
-# Register your models here.
+class DailyDictionaryAdmin(admin.ModelAdmin):
+    list_display = ['english', 'uzbek', 'views', 'created_at']
+
+
+admin.site.register(DailyDictionary, DailyDictionaryAdmin)

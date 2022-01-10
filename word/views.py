@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework.generics import ListAPIView
 
-# Create your views here.
+from .models import DailyDictionary
+from .serializers import DailyDictionarySerializer
+
+
+class DailyDictionaryListAPIView(ListAPIView):
+    queryset = DailyDictionary.objects.all()
+    serializer_class = DailyDictionarySerializer
